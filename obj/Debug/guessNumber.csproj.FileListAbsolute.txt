@@ -1,0 +1,6 @@
+C:\Users\omidh\Documents\GitHub\guessNumber\guessNumber\bin\Debug\guessNumber.exe.config
+C:\Users\omidh\Documents\GitHub\guessNumber\guessNumber\bin\Debug\guessNumber.exe
+C:\Users\omidh\Documents\GitHub\guessNumber\guessNumber\bin\Debug\guessNumber.pdb
+C:\Users\omidh\Documents\GitHub\guessNumber\guessNumber\obj\Debug\guessNumber.csprojAssemblyReference.cache
+C:\Users\omidh\Documents\GitHub\guessNumber\guessNumber\obj\Debug\guessNumber.exe
+C:\Users\omidh\Documents\GitHub\guessNumber\guessNumber\obj\Debug\guessNumber.pdb
