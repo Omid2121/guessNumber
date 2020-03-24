@@ -9,13 +9,15 @@ namespace guessNumber
     class Program
     {
         public static Random random = new Random();
+        public static int winStreak = 0;
+
 
         static void Main(string[] args)
         {
             
             while(true)
             {
-                Console.WriteLine("Guess number between 1 & 10 : ");
+               
                 Mitspil();
                 Console.ReadLine();
             }
@@ -25,6 +27,7 @@ namespace guessNumber
 
         public static void Mitspil()
         {
+            Console.WriteLine("Guess number between 1 & 10 : ");
             
             int randomNumber = random.Next(1, 11);
             int input;
@@ -44,16 +47,19 @@ namespace guessNumber
                 else if (input == randomNumber)
                 {
                     Console.WriteLine("You win!!");
+                    Console.WriteLine("Your Winsteak is " + winStreak);
+                    winStreak++;
 
                     Console.WriteLine("Do you want to play again?(yes or no)");
                     string restart = Console.ReadLine();
                     if (restart == "no")
                     {
-                        
+                        gameOver = true;
                     }
-                    else
+                    else if (restart == "yes")
                     {
                         Mitspil();
+                       
                     }
                 }
                 else if (input > randomNumber)
