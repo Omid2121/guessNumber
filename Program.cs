@@ -10,7 +10,7 @@ namespace guessNumber
     class Program
     {
         public static Random random = new Random();
-        public static int winStreak = 0;
+        public static int winStreak = 1;
 
 
         static void Main(string[] args)
@@ -52,11 +52,10 @@ namespace guessNumber
                     Console.WriteLine("Your Winsteak is " + winStreak);
                     winStreak++;
 
+                    WriteHighScore(winStreak);
 
-                    //string filePath = @"C:\Users\omidh\Documents";
-                    //List<string> lines = File.ReadAllLines(filePath).ToList();
-                    //lines.Add("The heighest score:" + winStreak);
-                    //File.WriteAllLines(filePath, lines);
+
+
 
 
                     Console.WriteLine("Do you want to play again?(yes or no)");
@@ -81,18 +80,18 @@ namespace guessNumber
             
         }
 
-        static void WriteHighScore(int score)
+        static void WriteHighScore(int score) //skriv i fil.
         {
             try
             {
-                File.WriteAllText(@"C:\Users\omidh\Documents", String.Empty);
-                File.WriteAllText(@"C:\Users\omidh\Documents",score.ToString());
+                File.WriteAllText(@"C:\Users\omidh\Documents\score.text", String.Empty);
+                File.WriteAllText(@"C:\Users\omidh\Documents\score.text", score.ToString());
             }
             catch (Exception e) { Console.WriteLine(e); }
             
         }
 
-        static string ReadHighScore()
+        static string ReadHighScore() //læs fra fil.
         {
             try
             {
