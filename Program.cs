@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace guessNumber
 {
@@ -17,7 +18,8 @@ namespace guessNumber
             
             while(true)
             {
-               
+                
+
                 Mitspil();
                 Console.ReadLine();
             }
@@ -50,6 +52,13 @@ namespace guessNumber
                     Console.WriteLine("Your Winsteak is " + winStreak);
                     winStreak++;
 
+
+                    //string filePath = @"C:\Users\omidh\Documents";
+                    //List<string> lines = File.ReadAllLines(filePath).ToList();
+                    //lines.Add("The heighest score:" + winStreak);
+                    //File.WriteAllLines(filePath, lines);
+
+
                     Console.WriteLine("Do you want to play again?(yes or no)");
                     string restart = Console.ReadLine();
                     if (restart == "no")
@@ -72,6 +81,29 @@ namespace guessNumber
             
         }
 
+        static void WriteHighScore(int score)
+        {
+            try
+            {
+                File.WriteAllText(@"C:\Users\omidh\Documents", String.Empty);
+                File.WriteAllText(@"C:\Users\omidh\Documents",score.ToString());
+            }
+            catch (Exception e) { Console.WriteLine(e); }
+            
+        }
+
+        static string ReadHighScore()
+        {
+            try
+            {
+                return File.ReadAllText(@"C:\Users\omidh\Documents");
+            }
+            catch (Exception)
+            {
+                return "-1";
+              
+            }
+        }
     }
 
 }
